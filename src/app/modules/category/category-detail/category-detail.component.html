@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="navigation">
+    <h2>{{category.label}}</h2>
+    <h4>{{category.website}}</h4>
+    <p>{{category.description}}</p>
+    <div class="navig">
+      <button mat-raised-button routerLink="/categories">Retour</button>
+      <button mat-raised-button color="primary" (click)="toggleAddChallenge()">
+        {{isAddChallenge ? 'Close'
+        : 'Add'}}</button>
+      <button mat-raised-button [routerLink]="['/quizs', category.id]" color="accent">Take
+        a quiz</button>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; justify-items: center;">
+    <div *ngIf="isAddChallenge" class="challenge">
+      <app-challenge-form [category]="category"></app-challenge-form>
+      <mat-divider></mat-divider>
+    </div>
+    <div class="quiz">
+      <app-challenge-list></app-challenge-list>
+    </div>
+  </div>
+</div>

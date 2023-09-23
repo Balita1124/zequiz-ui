@@ -1,0 +1,18 @@
+<ng-container *ngIf="isReady;else summary">
+  <mat-stepper #stepper>
+    <mat-step *ngFor="let challenge of quizs">
+      <!-- <ng-template matStepLabel>One</ng-template> -->
+      <app-challenge-detail [challenge]="challenge"></app-challenge-detail>
+      <button mat-button color="accent" matStepperPrevious>Back</button>
+      <button mat-button color="accent" matStepperNext>Next</button>
+    </mat-step>
+  </mat-stepper>
+</ng-container>
+<ng-template #summary>
+  <h2>Bienvenue au quiz Angular</h2>
+  <p>
+    Vous aurez 10 questions qui vont s'enchainner, il n'y aura pas de note. <br>
+    Cliquer sur le boutton Start quand vous etes pret(e)s
+  </p>
+  <button mat-raised-button color="primary" (click)="startQuiz()">Start</button>
+</ng-template>

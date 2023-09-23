@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-content>
+    <div class="question">
+      <h5>Question</h5>
+      <p>{{challenge.question}}</p>
+    </div>
+    <div *ngIf="showAnswer" class="answer">
+      <h5>Answer</h5>
+      <pre>{{challenge.answer}}</pre>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="toggleShowAnswer()">{{showAnswer ? 'Hide answer' :
+      'Show Answer'}}</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,22 @@
+:host {
+  .container {
+    width: 80%;
+    margin: auto;
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    button {
+      margin-right: 10px;
+      margin-bottom: 10px;
+      width: 100px;
+    }
+  }
+
+  .quiz {
+    margin-top: 10px;
+  }
+}

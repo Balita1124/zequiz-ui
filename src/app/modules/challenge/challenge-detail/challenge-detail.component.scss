@@ -1,0 +1,24 @@
+:host {
+  .question {
+    h5 {
+      // color: white;
+      text-decoration: underline;
+    }
+  }
+
+  .answer {
+    h5 {
+      color: green;
+      text-decoration: underline;
+    }
+
+    pre {
+      overflow-x: auto;
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+  }
+}

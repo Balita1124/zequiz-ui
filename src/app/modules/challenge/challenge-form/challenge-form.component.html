@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="navigation">
+    <h1>Add Challenge</h1>
+  </div>
+  <div style="display: flex; flex-direction: column; justify-items: center;">
+    <form [formGroup]="formGroup" (ngSubmit)="addChallenge()">
+      <mat-card>
+        <mat-card-content style="display: flex; flex-direction: column;">
+          <mat-form-field>
+            <mat-label>question</mat-label>
+            <textarea matInput formControlName="question"></textarea>
+            <!-- <input matInput formControlName="question"> -->
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>answer</mat-label>
+            <!-- <input matInput formControlName="answer"> -->
+            <textarea matInput formControlName="answer"></textarea>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Category</mat-label>
+            <!-- <input matInput type="text" formControlName="categoryId"> -->
+            <select matNativeControl required formControlName="categoryId">
+              <option *ngFor="let cat of categoryList"
+                [selected]="categoryId.value===cat.id" [value]="cat.id">{{cat.label}}
+              </option>
+            </select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Level</mat-label>
+            <input matInput type="text" formControlName="level">
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="accent"
+            [disabled]="!formGroup.valid">Add</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+</div>

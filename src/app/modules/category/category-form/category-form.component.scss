@@ -1,0 +1,23 @@
+:host {
+  .container {
+    width: 80%;
+    margin: auto;
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    .navig {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      margin-bottom: 10px;
+
+      button {
+        width: 100px;
+      }
+    }
+  }
+}
